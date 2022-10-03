@@ -8,11 +8,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class DemoApplication {
+public class APIFirst {
 
-
+// ruta: alumnes/grup/(nomAlumne)
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(APIFirst.class, args);
+    }
+@GetMapping("int")
+    public int bonaTarda(){
+        int i;
+        for (i = 0; i < 6; i++) {
+        }
+        return i;
     }
 
     /**
@@ -20,7 +27,7 @@ public class DemoApplication {
      */
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return String.format("Hello %s!", name);
+        return String.format("<h1>Hello %s!<h1>", name);
     }
 
 }
